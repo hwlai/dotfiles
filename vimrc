@@ -27,3 +27,48 @@ imap <Up> <Nop>
 imap <Down> <Nop>
 imap <Left> <Nop>
 imap <Right> <Nop>
+
+" Show NerdTree
+noremap <F2> :NERDTreeToggle<CR>
+
+" Comment/Uncomment with NerdCommenter
+noremap <Space>c <Plug>NERDCommenterInvert
+
+"------------------------------------------------------------------------------
+" Plugins
+"------------------------------------------------------------------------------
+" call plug#begin('~/.vim/plugged')
+
+" Shows a sidebar with your files
+" Plug 'The-NERD-tree', { 'on': 'NERDTreeToggle' }
+
+" Displays errors in your files
+" Plug 'scrooloose/syntastic'
+
+" Allows you to quickly comment/uncomment multiple lines
+" Plug 'The-NERD-Commenter'
+
+" Autocompletes words for you using <Tab>
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+
+" Shows which lines have changed in a Git repository
+" Plug 'airblade/vim-gitgutter'
+
+" call plug#end()
+
+"------------------------------------------------------------------------------
+" GitGutter
+"------------------------------------------------------------------------------
+let g:gitgutter_realtime = 0       " only run gitgutter on write
+"------------------------------------------------------------------------------
+" NerdCommenter
+"------------------------------------------------------------------------------
+let NERDSpaceDelims=1              " put space after comment char
+
+"------------------------------------------------------------------------------
+" Syntastic
+"------------------------------------------------------------------------------
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_error_symbol='✠'
+let g:syntastic_style_warning_symbol='≈'
