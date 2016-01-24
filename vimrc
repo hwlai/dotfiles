@@ -15,6 +15,15 @@ filetype plugin on                 " enable filetype detection
 filetype indent on                 " enable auto-indenting based on filetype
 
 "------------------------------------------------------------------------------
+" Persistent undo
+"------------------------------------------------------------------------------
+if has('persistent_undo')
+    set undofile                  " keep undo history across sessions
+    set undodir=$HOME/.vim/undo   " where to store undo files
+    set undolevels=1000           " number of undo levels to store
+endif
+
+"------------------------------------------------------------------------------
 " Mappings
 "------------------------------------------------------------------------------
 
