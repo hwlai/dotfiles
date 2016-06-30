@@ -12,6 +12,9 @@ set incsearch                      " search incrementally as the user is typing
 set hlsearch                       " highlight all search results
 set mouse=a                        " enable mouse 
 
+set splitbelow                     " open new horizontal splits at the bottom
+set splitright                     " open new vertical splits to the right
+
 syntax on                          " explicitely enable syntax highlighting
 filetype plugin on                 " enable filetype detection
 filetype indent on                 " enable auto-indenting based on filetype
