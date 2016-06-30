@@ -10,6 +10,7 @@ set ignorecase                     " use case insensitive search
 set smartcase                      " except when using capital letters
 set incsearch                      " search incrementally as the user is typing
 set hlsearch                       " highlight all search results
+set mouse=a                        " enable mouse 
 
 filetype plugin on                 " enable filetype detection
 filetype indent on                 " enable auto-indenting based on filetype
@@ -45,8 +46,9 @@ noremap <Space>c <Plug>NERDCommenterInvert
 "------------------------------------------------------------------------------
 " Plugins
 "------------------------------------------------------------------------------
-" call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged')
 
+Plug 'flazz/vim-colorschemes'
 " Shows a sidebar with your files
 " Plug 'The-NERD-tree', { 'on': 'NERDTreeToggle' }
 
@@ -57,12 +59,20 @@ noremap <Space>c <Plug>NERDCommenterInvert
 " Plug 'The-NERD-Commenter'
 
 " Autocompletes words for you using <Tab>
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
 " Shows which lines have changed in a Git repository
 " Plug 'airblade/vim-gitgutter'
 
-" call plug#end()
+" Show tree of undo history
+Plug 'sjl/gundo.vim'
+
+call plug#end()
+
+"------------------------------------------------------------------------------
+" Appearance
+"------------------------------------------------------------------------------
+"colorscheme monokai-chris
 
 "------------------------------------------------------------------------------
 " GitGutter
