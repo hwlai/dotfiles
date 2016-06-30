@@ -47,6 +47,12 @@ noremap <F2> :NERDTreeToggle<CR>
 " Comment/Uncomment with NerdCommenter
 noremap <Space>c <Plug>NERDCommenterInvert
 
+" Easier split navigation with Ctrl-[hjkl]
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+
 "------------------------------------------------------------------------------
 " Plugins
 "------------------------------------------------------------------------------
