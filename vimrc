@@ -12,6 +12,10 @@ set incsearch                      " search incrementally as the user is typing
 set hlsearch                       " highlight all search results
 set mouse=a                        " enable mouse 
 
+set splitbelow                     " open new horizontal splits at the bottom
+set splitright                     " open new vertical splits to the right
+
+syntax on                          " explicitely enable syntax highlighting
 filetype plugin on                 " enable filetype detection
 filetype indent on                 " enable auto-indenting based on filetype
 
@@ -42,6 +46,12 @@ noremap <F2> :NERDTreeToggle<CR>
 
 " Comment/Uncomment with NerdCommenter
 noremap <Space>c <Plug>NERDCommenterInvert
+
+" Easier split navigation with Ctrl-[hjkl]
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
 
 "------------------------------------------------------------------------------
 " Plugins
