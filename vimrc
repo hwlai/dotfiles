@@ -15,9 +15,11 @@ set mouse=a                        " enable mouse
 set splitbelow                     " open new horizontal splits at the bottom
 set splitright                     " open new vertical splits to the right
 
-syntax on                          " explicitely enable syntax highlighting
+syntax enable                          " explicitely enable syntax highlighting
 filetype plugin on                 " enable filetype detection
 filetype indent on                 " enable auto-indenting based on filetype
+
+set t_Co=256
 
 "------------------------------------------------------------------------------
 " Persistent undo
@@ -53,14 +55,19 @@ nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 
+" Control iPython in tmux pane
+nmap ,r :execute 'SlimeSend1 %run ' . expand('%:p')<CR>
+nmap ,x :SlimeSend1 plt.close('all')<CR>
+
 "------------------------------------------------------------------------------
 " Plugins
 "------------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
 Plug 'flazz/vim-colorschemes'
+Plug 'jacoborus/tender.vim'
 " Shows a sidebar with your files
-" Plug 'The-NERD-tree', { 'on': 'NERDTreeToggle' }
+Plug 'The-NERD-tree', { 'on': 'NERDTreeToggle' }
 
 " Displays errors in your files
 " Plug 'scrooloose/syntastic'
@@ -77,13 +84,15 @@ Plug 'flazz/vim-colorschemes'
 " Show tree of undo history
 Plug 'sjl/gundo.vim'
 
+" Send text to tmux panes
+Plug 'jpalardy/vim-slime'
+
 call plug#end()
 
 "------------------------------------------------------------------------------
 " Appearance
 "------------------------------------------------------------------------------
-"colorscheme monokai-chris
-
+colorscheme tender
 "------------------------------------------------------------------------------
 " GitGutter
 "------------------------------------------------------------------------------
@@ -92,6 +101,13 @@ let g:gitgutter_realtime = 0       " only run gitgutter on write
 " NerdCommenter
 "------------------------------------------------------------------------------
 let NERDSpaceDelims=1              " put space after comment char
+
+"------------------------------------------------------------------------------
+" slime
+"------------------------------------------------------------------------------
+let g:slime_target = 'tmux'
+let g:slime_python_ipython = 1
+let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
 
 "------------------------------------------------------------------------------
 " Syntastic
