@@ -67,7 +67,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'flazz/vim-colorschemes'
 Plug 'jacoborus/tender.vim'
 " Shows a sidebar with your files
-Plug 'The-NERD-tree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 " Displays errors in your files
 " Plug 'scrooloose/syntastic'
@@ -86,6 +86,9 @@ Plug 'sjl/gundo.vim'
 
 " Send text to tmux panes
 Plug 'jpalardy/vim-slime'
+
+" Add python pluggin for part running"
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 
 call plug#end()
 
